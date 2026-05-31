@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar persona</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="home-bg">
+
+<div class="card-home">
+
+    <h1 class="title">Registrar persona</h1>
+
+    <form method="POST" class="form-modern">
+
+        <label>Nom</label>
+        <input type="text" name="nom" required>
+
+        <label>Cognoms</label>
+        <input type="text" name="cognoms" required>
+
+        <label>Edat</label>
+        <input type="number" name="edat" required>
+
+        <label>Tipus (adult, nen, etc.)</label>
+        <input type="text" name="tipus">
+
+        <label>Malalties / medicació</label>
+        <textarea name="malalties"></textarea>
+
+        <label>Notes</label>
+        <textarea name="notes"></textarea>
+
+        <button type="submit" class="btn primary">Guardar</button>
+    </form>
+
+    <a href="/" class="btn secondary">Tornar</a>
+
+</div>
+
+</body>
+</html>

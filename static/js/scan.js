@@ -1,0 +1,1 @@
+console.log("scan.js carregat — lector QR pendent d'integrar");

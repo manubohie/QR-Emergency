@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Fitxa persona</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="home-bg">
+
+<div class="card-home">
+
+    <h1 class="title">{{ person.nom }} {{ person.cognoms }}</h1>
+
+    <div class="detail-box">
+
+        <p><strong>Edat:</strong> {{ person.edat }}</p>
+        <p><strong>Tipus:</strong> {{ person.tipus }}</p>
+        <p><strong>Malalties / medicació:</strong> {{ person.malalties }}</p>
+        <p><strong>Notes:</strong> {{ person.notes }}</p>
+        <p><strong>Estat:</strong> {{ person.estat }}</p>
+        <p><strong>ID:</strong> {{ person.id }}</p>
+
+    </div>
+
+    <a href="/" class="btn secondary">Tornar</a>
+
+</div>
+
+</body>
+</html>
