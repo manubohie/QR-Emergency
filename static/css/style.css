@@ -79,3 +79,45 @@ button:hover {
     display: block;
     margin: 0 auto 10px auto;
 }
+
+/* Camps moderns */
+.field-modern {
+    display: flex;
+    align-items: center;
+    background: #f2f7ff;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.icon-field {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.field-modern input,
+.field-modern select,
+.field-modern textarea {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Info */
+.info-modern p {
+    font-size: 17px;
+    margin: 8px 0;
+}
+
+/* QR preview */
+.qr-preview {
+    width: 120px;
+    display: block;
+    margin: 20px auto;
+}

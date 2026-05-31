@@ -1,67 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="ca">
 <head>
+    <meta charset="UTF-8">
+    <title>Registrar persona</title>
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
-<body>
+<body class="animated-bg">
 
-<div class="container">
-    <div class="title">Crear Polsera</div>
+<div class="card-home-modern">
 
-    <form method="POST">
+    <h1 class="title-modern">Registrar persona</h1>
 
-        <div class="field">
-            <img src="/static/img/user.png">
+    <form method="POST" class="form-modern">
+
+        <div class="field-modern">
+            <img src="/static/img/user.png" class="icon-field">
             <input name="name" placeholder="Nom complet" required>
         </div>
 
-        <div class="field">
-            <img src="/static/img/car.png">
+        <div class="field-modern">
+            <img src="/static/img/car.png" class="icon-field">
             <input name="vehicle" placeholder="Matrícula" required>
         </div>
 
-        <div class="field">
-            <img src="/static/img/user.png">
+        <div class="field-modern">
+            <img src="/static/img/user.png" class="icon-field">
             <select name="gender">
-                <option>Male</option>
-                <option>Female</option>
+                <option>Home</option>
+                <option>Dona</option>
             </select>
         </div>
 
-        <div class="field">
-            <img src="/static/img/phone.png">
+        <div class="field-modern">
+            <img src="/static/img/phone.png" class="icon-field">
             <input name="emergency_phone" placeholder="Telèfon d'emergència" required>
         </div>
 
-        <div class="field">
-            <img src="/static/img/phone.png">
+        <div class="field-modern">
+            <img src="/static/img/phone.png" class="icon-field">
             <input name="optional_phone" placeholder="Telèfon opcional">
         </div>
 
-        <div class="field">
-            <img src="/static/img/user.png">
-            <input name="occupation" placeholder="Ocupació">
-        </div>
-
-        <div class="field">
-            <img src="/static/img/address.png">
+        <div class="field-modern">
+            <img src="/static/img/address.png" class="icon-field">
             <textarea name="address" placeholder="Adreça" required></textarea>
         </div>
 
-        <div class="field">
-            <img src="/static/img/blood.png">
+        <div class="field-modern">
+            <img src="/static/img/blood.png" class="icon-field">
             <input name="blood" placeholder="Grup sanguini">
         </div>
 
-        <div class="field">
-            <img src="/static/img/medical.png">
+        <div class="field-modern">
+            <img src="/static/img/medical.png" class="icon-field">
             <textarea name="medical" placeholder="Condicions mèdiques"></textarea>
         </div>
 
-        <button type="submit">Generar QR</button>
+        <button type="submit" class="btn-modern primary-modern">Generar QR</button>
     </form>
 
-    <a class="back" href="/">Tornar</a>
+    <a href="/" class="btn-modern secondary-modern">Tornar</a>
+
 </div>
 
 </body>
