@@ -1,29 +1,24 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Fitxa persona</title>
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
-<body class="home-bg">
+<body>
 
-<div class="card-home">
+<div class="container">
+    <div class="title">Informació</div>
 
-    <h1 class="title">{{ person.nom }} {{ person.cognoms }}</h1>
+    <p><b>Nom:</b> {{ data.name }}</p>
+    <p><b>Matrícula:</b> {{ data.vehicle }}</p>
+    <p><b>Gènere:</b> {{ data.gender }}</p>
+    <p><b>Telèfon emergència:</b> {{ data.emergency_phone }}</p>
+    <p><b>Telèfon opcional:</b> {{ data.optional_phone }}</p>
+    <p><b>Ocupació:</b> {{ data.occupation }}</p>
+    <p><b>Adreça:</b> {{ data.address }}</p>
+    <p><b>Grup sanguini:</b> {{ data.blood }}</p>
+    <p><b>Condicions mèdiques:</b> {{ data.medical }}</p>
 
-    <div class="detail-box">
-
-        <p><strong>Edat:</strong> {{ person.edat }}</p>
-        <p><strong>Tipus:</strong> {{ person.tipus }}</p>
-        <p><strong>Malalties / medicació:</strong> {{ person.malalties }}</p>
-        <p><strong>Notes:</strong> {{ person.notes }}</p>
-        <p><strong>Estat:</strong> {{ person.estat }}</p>
-        <p><strong>ID:</strong> {{ person.id }}</p>
-
-    </div>
-
-    <a href="/" class="btn secondary">Tornar</a>
-
+    <a class="back" href="/">Tornar</a>
 </div>
 
 </body>

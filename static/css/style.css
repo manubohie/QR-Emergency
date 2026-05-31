@@ -1,116 +1,81 @@
-/* Fons suau tipus app */
-.home-bg {
-    background: linear-gradient(180deg, #e8f1ff 0%, #ffffff 100%);
+body {
+    background: #d9ecff;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* Targeta central */
-.card-home {
+.container {
     max-width: 420px;
-    margin: 60px auto;
+    margin: 40px auto;
     background: white;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
-    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Títol */
 .title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #1a3d7c;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
-/* Text introductori */
-.intro {
+.field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background: #f2f7ff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.field img {
+    width: 22px;
+    margin-right: 10px;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
     font-size: 16px;
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 35px;
 }
 
-/* Formulari modern */
-.form-modern label {
-    display: block;
-    text-align: left;
-    margin-top: 15px;
-    font-weight: 600;
-    color: #333;
-}
-
-.form-modern input,
-.form-modern textarea {
+button {
     width: 100%;
     padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    margin-top: 5px;
-    font-size: 16px;
-}
-
-/* Caixa de detall */
-.detail-box {
-    text-align: left;
-    margin-bottom: 25px;
-}
-
-.detail-box p {
-    margin: 10px 0;
-    font-size: 16px;
-}
-
-/* Caixa d'escaneig */
-.scan-box {
-    background: #f0f4ff;
-    border: 2px dashed #7aa2ff;
-    padding: 40px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-}
-
-.scan-placeholder {
-    color: #4a6bb3;
-    font-size: 16px;
-}
-
-/* Botons */
-.button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.btn {
-    display: block;
-    padding: 15px;
-    border-radius: 12px;
-    text-decoration: none;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
     font-size: 18px;
-    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #005fcc;
+}
+
+.back {
+    display: block;
     text-align: center;
-    transition: 0.2s;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
 }
 
-/* Botó principal */
-.btn.primary {
-    background: #0070f3;
-    color: white;
+.icon-btn {
+    width: 22px;
+    vertical-align: middle;
+    margin-right: 8px;
 }
-
-.btn.primary:hover {
-    background: #0059c9;
-}
-
-/* Botó secundari */
-.btn.secondary {
-    background: #10b981;
-    color: white;
-}
-
-.btn.secondary:hover {
-    background: #0d966c;
+.logo-img {
+    width: 60px;
+    display: block;
+    margin: 0 auto 10px auto;
 }

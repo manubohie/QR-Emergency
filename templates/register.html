@@ -1,41 +1,67 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Registrar persona</title>
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
-<body class="home-bg">
+<body>
 
-<div class="card-home">
+<div class="container">
+    <div class="title">Crear Polsera</div>
 
-    <h1 class="title">Registrar persona</h1>
+    <form method="POST">
 
-    <form method="POST" class="form-modern">
+        <div class="field">
+            <img src="/static/img/user.png">
+            <input name="name" placeholder="Nom complet" required>
+        </div>
 
-        <label>Nom</label>
-        <input type="text" name="nom" required>
+        <div class="field">
+            <img src="/static/img/car.png">
+            <input name="vehicle" placeholder="Matrícula" required>
+        </div>
 
-        <label>Cognoms</label>
-        <input type="text" name="cognoms" required>
+        <div class="field">
+            <img src="/static/img/user.png">
+            <select name="gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
 
-        <label>Edat</label>
-        <input type="number" name="edat" required>
+        <div class="field">
+            <img src="/static/img/phone.png">
+            <input name="emergency_phone" placeholder="Telèfon d'emergència" required>
+        </div>
 
-        <label>Tipus (adult, nen, etc.)</label>
-        <input type="text" name="tipus">
+        <div class="field">
+            <img src="/static/img/phone.png">
+            <input name="optional_phone" placeholder="Telèfon opcional">
+        </div>
 
-        <label>Malalties / medicació</label>
-        <textarea name="malalties"></textarea>
+        <div class="field">
+            <img src="/static/img/user.png">
+            <input name="occupation" placeholder="Ocupació">
+        </div>
 
-        <label>Notes</label>
-        <textarea name="notes"></textarea>
+        <div class="field">
+            <img src="/static/img/address.png">
+            <textarea name="address" placeholder="Adreça" required></textarea>
+        </div>
 
-        <button type="submit" class="btn primary">Guardar</button>
+        <div class="field">
+            <img src="/static/img/blood.png">
+            <input name="blood" placeholder="Grup sanguini">
+        </div>
+
+        <div class="field">
+            <img src="/static/img/medical.png">
+            <textarea name="medical" placeholder="Condicions mèdiques"></textarea>
+        </div>
+
+        <button type="submit">Generar QR</button>
     </form>
 
-    <a href="/" class="btn secondary">Tornar</a>
-
+    <a class="back" href="/">Tornar</a>
 </div>
 
 </body>
