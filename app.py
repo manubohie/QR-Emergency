@@ -18,7 +18,7 @@ def register():
             "primer_cognom": request.form["primer_cognom"],
             "segon_cognom": request.form["segon_cognom"],
             "edat": request.form["edat"],
-            "tipus": request.form["tipus"]
+            "genere": request.form["genere"]
         }
         return redirect(url_for("detail", entry_id=entry_id))
     return render_template("register.html")

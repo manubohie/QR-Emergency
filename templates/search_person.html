@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Cercar persona</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="animated-bg">
+
+<div class="card-home-modern">
+
+    <h1 class="title-modern">Cercar persona</h1>
+
+    <form method="GET" action="/search" class="search-bar-modern">
+        <input type="text" name="q" placeholder="Nom, cognom, matrícula, sang..." value="{{ request.args.get('q', '') }}">
+        <button class="btn-modern primary-modern">Buscar</button>
+    </form>
+
+    <div class="grid-modern">
+        {% for person in people %}
+        <div class="card-person-modern">
+            <img src="{{ person.photo_url }}" class="photo-modern">
+
+            <div class="info-person-modern">
+                <h3>{{ person.nom }}</h3>
+                <p><b>Edat:</b> {{ person.edat }}</p>
+            </div>
+
+            <a href="/detail/{{ person.id }}" class="btn-modern secondary-modern">
+                Veure fitxa
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="/" class="btn-modern secondary-modern">Tornar</a>
+
+</div>
+
+</body>
+</html>
