@@ -35,10 +35,14 @@ def search():
 
 @app.route("/search_person")
 def search_person():
+    print("🔥 SEARCH_PERSON EXECUTAT")
+
     cercador_persona = request.args.get("cercador_persona", "").lower()
 
     # Recuperar totes les persones
     people = supabase.table("persons").select("*").execute().data
+
+    print("📌 DADES SUPABASE:", people)
 
     # Filtre simple
     if cercador_persona:
