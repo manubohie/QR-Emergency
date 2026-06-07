@@ -57,7 +57,7 @@ button, a {
     margin-top: 10px;
 }
 
-button:hover {
+button:hover, a:hover {
     background: #005fcc;
 }
 

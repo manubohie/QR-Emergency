@@ -1,5 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 import uuid
+from supabase import create_client, Client
+import os
+
+SUPABASE_URL = os.environ.get("SUPABASE_URL")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
+
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 app = Flask(__name__)
 
