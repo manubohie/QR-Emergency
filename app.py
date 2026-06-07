@@ -34,19 +34,21 @@ def search():
     return render_template("search.html")
 
 @app.route("/search_person")
-def search_person(people):
-    q = request.args.get("q", "").lower()
+def search_person():
+    cercador_persona = request.args.get("cercador_persona", "").lower()
 
     # Recuperar totes les persones
     people = supabase.table("persons").select("*").execute().data
 
     # Filtre simple
-    if q:
+    if cercador_persona:
         people = [
             p for p in people
-            if q in p["nom"].lower()
-            or q in p["edat"].lower()
-            or q in p.get("edat", "").lower()
+            if cercador_persona in p["nom"].lower()
+            or cercador_persona in p["primer_cognom"].lower()
+            or cercador_persona in p["segon_cognom"].lower()
+            or cercador_persona in p["edat"].lower()
+            or cercador_persona in p["genere"].lower()
         ]
 
     return render_template("search_person.html", people=people)
