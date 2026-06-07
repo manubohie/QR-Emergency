@@ -50,7 +50,9 @@ def register():
         # Afegir aquesta persona com a familiar dels seleccionats
         for fam_id in familiars:
             fam_data = supabase.table("persons").select("familiars").eq("id", fam_id).single().execute().data
-            llista = fam_data.get("familiars", [])
+            
+            # 🔥 Convertir None → []
+            llista = fam_data.get("familiars") or []
 
             if new_id not in llista:
                 llista.append(new_id)
