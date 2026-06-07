@@ -13,9 +13,9 @@
 
     <form method="GET" action="/search" class="search-bar-modern">
         <input type="text" 
-               name="q" 
+               name="carca_persona" 
                placeholder="nom, cognoms, edat, gènere..." 
-               value="{{ q }}">
+               value="{{ cerca_persona | default('') }}">
         <button class="btn-modern primary-modern">Buscar</button>
     </form>
 
