@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
-import uuid
 from supabase import create_client, Client
+from flask import Flask, render_template, request, redirect, url_for
+
 import os
+import uuid
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
