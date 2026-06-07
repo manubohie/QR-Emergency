@@ -1,3 +1,5 @@
+from webbrowser import get
+
 from supabase import create_client, Client
 from flask import Flask, render_template, request, redirect, url_for
 
@@ -31,7 +33,7 @@ def register():
         return redirect(url_for("detail", entry_id=entry_id))
     return render_template("register.html")
 
-@app.route("/p/<entry_id>")
+@app.route("/detail/<entry_id>")
 def detail(entry_id):
     if entry_id not in database:
         return "Not found", 404
@@ -39,7 +41,8 @@ def detail(entry_id):
 
 @app.route("/search")
 def search():
-    cerca_persona = request.args.get("cerca_persona", "").lower()
+
+    cerca_persona = get(request.args.get("cerca_persona", "")).lower()
 
     # Recuperar totes les persones
     people = supabase.table("persons").select("*").execute().data
