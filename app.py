@@ -21,6 +21,9 @@ def home():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    # Obtenir totes les persones existents per omplir el selector
+    people = supabase.table("persons").select("id, nom, primer_cognom").execute().data
+
     if request.method == "POST":
 
         nom = request.form["nom"]
@@ -29,30 +32,46 @@ def register():
         edat = request.form["edat"]
         genere = request.form["genere"]
 
-        # Inserció real a Supabase
+        familiars = request.form.getlist("familiars")  # Llista d’IDs
+
+        # 1) Inserir la persona
         result = supabase.table("persons").insert({
             "nom": nom,
             "primer_cognom": primer_cognom,
             "segon_cognom": segon_cognom,
             "edat": int(edat),
-            "genere": genere
+            "genere": genere,
+            "familiars": familiars
         }).execute()
 
         new_id = result.data[0]["id"]
 
+        # 2) RELACIÓ BIDIRECCIONAL
+        # Afegir aquesta persona com a familiar dels seleccionats
+        for fam_id in familiars:
+            fam_data = supabase.table("persons").select("familiars").eq("id", fam_id).single().execute().data
+            llista = fam_data.get("familiars", [])
+
+            if new_id not in llista:
+                llista.append(new_id)
+
+            supabase.table("persons").update({"familiars": llista}).eq("id", fam_id).execute()
+
         return redirect(f"/detail/{new_id}")
 
-    return render_template("register.html")
+    return render_template("register.html", people=people)
 
 @app.route("/detail/<entry_id>")
 def detail(entry_id):
 
-    result = supabase.table("persons").select("*").eq("id", entry_id).single().execute()
+    persona = supabase.table("persons").select("*").eq("id", entry_id).single().execute().data
 
-    if result.data is None:
-        return "Not found", 404
+    familiars = []
+    if persona.get("familiars"):
+        familiars = supabase.table("persons").select("*").in_("id", persona["familiars"]).execute().data
 
-    return render_template("detail.html", data=result.data)
+    return render_template("detail.html", data=persona, familiars=familiars)
+
 
 @app.route("/search")
 def search():

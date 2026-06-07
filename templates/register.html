@@ -42,6 +42,18 @@
             </select>
         </div>
 
+        <div class="field-modern">
+            <img src="/static/img/user.png" class="icon-field">
+            <select name="familiars" multiple size="5">
+                {% for p in people %}
+                    <option value="{{ p.id }}">
+                        {{ p.nom }} {{ p.primer_cognom }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+
         <div class="button-group">
             <button type="submit" class="btn-modern">Registrar</button>
             <button href="/search" class="btn-modern">Cercar persona</a>

@@ -26,6 +26,17 @@
         b>Condicions mèdiques:</b> {{ data.condicions_mediques }}</p>-->
     </div>
 
+    <div class="info-modern">
+        {% if familiars %}
+        <h3>Familiars</h3>
+        <ul>
+            {% for f in familiars %}
+                <li>{{ f.nom }} {{ f.primer_cognom }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
     <div class="button-group">
         <a href="/search" class="btn-modern">Cercar persona</a>
         <a href="/" class="btn-modern">Pàgina principal</a>
