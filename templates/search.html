@@ -11,21 +11,36 @@
 
     <h1 class="title-modern">Cercar persona</h1>
 
-    <p class="intro-modern">
-        Cerca una persona registrada mitjançant el buscador o revisant les targetes.
-    </p>
-
-    <form method="GET" action="/search_person" class="search-bar-modern">
-        <input type="text" name="cercador_persona" placeholder="nom, primer_cognom, segon_cognom, edat, gènere..." value="{{ request.args.get('cercador_persona', '') }}">
+    <form method="GET" action="/search" class="search-bar-modern">
+        <input type="text" 
+               name="cerca_persona" 
+               placeholder="nom, primer cognom, segon cognom, edat, gènere..." 
+               value="{{ cerca_persona }}">
         <button class="btn-modern primary-modern">Buscar</button>
     </form>
 
+    <div class="grid-modern">
+        {% for person in people %}
+        <div class="card-person-modern">
+            <img src="{{ person.photo_url }}" class="photo-modern">
+
+            <div class="info-person-modern">
+                <h3>{{ person.nom }}</h3>
+                <p><b>Primer cognom:</b> {{ person.primer_cognom }}</p>
+                <p><b>Segon cognom:</b> {{ person.segon_cognom }}</p>
+                <p><b>Edat:</b> {{ person.edat }}</p>
+                <p><b>Gènere:</b> {{ person.genere }}</p>
+            </div>
+
+            <a href="/detail/{{ person.id }}" class="btn-modern secondary-modern">
+                Veure fitxa
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
     <div class="button-group">
-
-        <a href="/" class="btn-modern secondary-modern">
-            Tornar
-        </a>
-
+        <a href="/" class="btn-modern secondary-modern">Tornar</a>
     </div>
 
 </div>

@@ -31,32 +31,24 @@ def detail(entry_id):
 
 @app.route("/search")
 def search():
-    return render_template("search.html")
-
-@app.route("/search_person")
-def search_person():
-    print("🔥 SEARCH_PERSON EXECUTAT")
-
-    cercador_persona = request.args.get("cercador_persona", "").lower()
+    cerca_persona = request.args.get("cerca_persona", "").lower()
 
     # Recuperar totes les persones
     people = supabase.table("persons").select("*").execute().data
 
-    print("📌 DADES SUPABASE:", people)
-
-    # Filtre simple
-    if cercador_persona:
-
+    # Filtre segur
+    if cerca_persona:
         people = [
             p for p in people
-            if cercador_persona in p.get("nom").lower()
-            or cercador_persona in p.get("primer_cognom").lower()
-            or cercador_persona in p.get("segon_cognom").lower()
-            or cercador_persona in str(p.get("edat")).lower()
-            or cercador_persona in p.get("genere").lower()
+            if cerca_persona in p.get("nom", "").lower()
+            or cerca_persona in p.get("primer_cognom", "").lower()
+            or cerca_persona in p.get("segon_cognom", "").lower()
+            or cerca_persona in str(p.get("edat", "")).lower()
+            or cerca_persona in p.get("genere", "").lower()
         ]
 
-    return render_template("search_person.html", people=people)
+    return render_template("search.html", people=people)
+
 
 if __name__ == "__main__":
     app.run()
