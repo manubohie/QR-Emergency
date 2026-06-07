@@ -30,11 +30,11 @@ def detail(entry_id):
     return render_template("detail.html", data=database[entry_id], entry_id=entry_id)
 
 @app.route("/search")
-def scan():
+def search():
     return render_template("search.html")
 
 @app.route("/search_person")
-def search(people):
+def search_person(people):
     q = request.args.get("q", "").lower()
 
     # Recuperar totes les persones
