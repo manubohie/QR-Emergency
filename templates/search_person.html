@@ -23,7 +23,10 @@
 
             <div class="info-person-modern">
                 <h3>{{ person.nom }}</h3>
+                <p><b>Primer cognom:</b> {{ person.primer_cognom }}</p>
+                <p><b>Segon cognom:</b> {{ person.segon_cognom }}</p>
                 <p><b>Edat:</b> {{ person.edat }}</p>
+                <p><b>Gènere:</b> {{ person.genere }}</p>
             </div>
 
             <a href="/detail/{{ person.id }}" class="btn-modern secondary-modern">
@@ -33,7 +36,9 @@
         {% endfor %}
     </div>
 
-    <a href="/" class="btn-modern secondary-modern">Tornar</a>
+    <div class="button-group">
+        <a href="/" class="btn-modern secondary-modern">Tornar</a>
+    </div>
 
 </div>
 

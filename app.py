@@ -29,11 +29,11 @@ def detail(entry_id):
         return "Not found", 404
     return render_template("detail.html", data=database[entry_id], entry_id=entry_id)
 
-@app.route("/scan")
-def scan():
-    return render_template("scan.html")
-
 @app.route("/search")
+def scan():
+    return render_template("search.html")
+
+@app.route("/search_person")
 def search(people):
     q = request.args.get("q", "").lower()
 
@@ -49,7 +49,7 @@ def search(people):
             or q in p.get("edat", "").lower()
         ]
 
-    return render_template("search.html", people=people)
+    return render_template("search_person.html", people=people)
 
 if __name__ == "__main__":
     app.run()
