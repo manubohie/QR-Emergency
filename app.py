@@ -45,11 +45,11 @@ def search_person():
 
         people = [
             p for p in people
-            if cercador_persona in p["nom"].lower()
-            or cercador_persona in p["primer_cognom"].lower()
-            or cercador_persona in p["segon_cognom"].lower()
-            or cercador_persona in p["edat"].lower()
-            or cercador_persona in p["genere"].lower()
+            if cercador_persona in p.get("nom").lower()
+            or cercador_persona in p.get("primer_cognom").lower()
+            or cercador_persona in p.get("segon_cognom").lower()
+            or cercador_persona in str(p.get("edat")).lower()
+            or cercador_persona in p.get("genere").lower()
         ]
 
     return render_template("search_person.html", people=people)
