@@ -15,16 +15,17 @@
         Cerca una persona registrada mitjançant el buscador o revisant les targetes.
     </p>
 
-    <div class="button-group">
+    <form method="GET" action="/search_person" class="search-bar-modern">
+        <input type="text" name="cercador_persona" placeholder="nom, primer_cognom, segon_cognom, edat, gènere..." value="{{ request.args.get('cercador_persona', '') }}">
+        <button class="btn-modern primary-modern">Buscar</button>
+    </form>
 
-        <a href="/search_person" class="btn-modern primary-modern">
-            Obrir cercador
-        </a>
+    <div class="button-group">
 
         <a href="/" class="btn-modern secondary-modern">
             Tornar
         </a>
-        
+
     </div>
 
 </div>
