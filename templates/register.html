@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Registrar persona</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 </head>
 
 <body>
@@ -44,7 +46,8 @@
 
         <div class="field-modern">
             <img src="/static/img/user.png" class="icon-field">
-            <select name="familiars" multiple size="5">
+
+            <select id="familiars" name="familiars" multiple>
                 {% for p in people %}
                     <option value="{{ p.id }}">
                         {{ p.nom }} {{ p.primer_cognom }}
@@ -52,6 +55,7 @@
                 {% endfor %}
             </select>
         </div>
+
 
 
         <div class="button-group">
@@ -63,5 +67,16 @@
     </form>
 
 </div>
+
+<script>
+    const familiarsSelect = new Choices('#familiars', {
+        removeItemButton: true,
+        searchPlaceholderValue: 'Escriu un nom...',
+        placeholderValue: 'Selecciona familiars',
+        searchEnabled: true,
+        itemSelectText: '',
+    });
+</script>
+
 </body>
 </html>
