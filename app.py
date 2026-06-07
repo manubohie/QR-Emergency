@@ -73,6 +73,10 @@ def search():
             or cerca_persona in p.get("genere", "").lower()
         ]
 
+        # 🔥 Si només hi ha un resultat → redirigir directament
+        if len(people) == 1:
+            return redirect(f"/detail/{people[0]['id']}")
+
     return render_template("search.html", people=people, cerca_persona=cerca_persona)
 
 
