@@ -25,22 +25,23 @@
 
             <img src="/static/img/user.png" class="photo-modern">
 
-            <div class="info-person-modern">
-                <h3>{{ person.get('nom', '') }}</h3>
-                <p><b>Primer cognom:</b> {{ person.get('primer_cognom', '') }}</p>
-                <p><b>Segon cognom:</b> {{ person.get('segon_cognom', '') }}</p>
-                <p><b>Edat:</b> {{ person.get('edat', '') }}</p>
-                <p><b>Gènere:</b> {{ person.get('genere', '') }}</p>
-            </div>
-
-            <a href="/p/{{ person.get('id') }}" class="btn-modern">Veure fitxa</a>
+            <a href="/detail/{{ person.get('id') }}">
+                <div class="info-person-modern">
+                    <h3>{{ person.get('nom', '') }}</h3>
+                    <!--<p><b>Primer cognom:</b> {{ person.get('primer_cognom', '') }}</p>
+                    <p><b>Segon cognom:</b> {{ person.get('segon_cognom', '') }}</p>
+                    <p><b>Edat:</b> {{ person.get('edat', '') }}</p>
+                    <p><b>Gènere:</b> {{ person.get('genere', '') }}</p>-->
+                </div>
+            </a>
 
         </div>
         {% endfor %}
     </div>
 
     <div class="button-group">
-        <a href="/" class="btn-modern">Tornar</a>
+        <a href="/register" class="btn-modern">Registrar persona</a>
+        <a href="/" class="btn-modern">Pàgina principal</a>
     </div>
 
 </div>
