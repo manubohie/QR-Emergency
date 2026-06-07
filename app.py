@@ -42,7 +42,7 @@ def detail(entry_id):
 @app.route("/search")
 def search():
 
-    cerca_persona = get(request.args.get("cerca_persona", "")).lower()
+    cerca_persona = request.args.get("cerca_persona", "").lower()
 
     # Recuperar totes les persones
     people = supabase.table("persons").select("*").execute().data
