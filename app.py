@@ -37,11 +37,12 @@ def search():
 def search_person():
     cercador_persona = request.args.get("cercador_persona", "").lower()
 
-    # Recuperar totes les persones
-    people = supabase.table("persons").select("*").execute().data
-
     # Filtre simple
     if cercador_persona:
+
+         # Recuperar totes les persones
+        people = supabase.table("persons").select("*").execute().data
+
         people = [
             p for p in people
             if cercador_persona in p["nom"].lower()
