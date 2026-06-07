@@ -22,22 +22,37 @@ def home():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        entry_id = str(uuid.uuid4())[:8]
-        database[entry_id] = {
-            "nom": request.form["nom"],
-            "primer_cognom": request.form["primer_cognom"],
-            "segon_cognom": request.form["segon_cognom"],
-            "edat": request.form["edat"],
-            "genere": request.form["genere"]
-        }
-        return redirect(url_for("detail", entry_id=entry_id))
+
+        nom = request.form["nom"]
+        primer_cognom = request.form["primer_cognom"]
+        segon_cognom = request.form["segon_cognom"]
+        edat = request.form["edat"]
+        genere = request.form["genere"]
+
+        # Inserció real a Supabase
+        result = supabase.table("persons").insert({
+            "nom": nom,
+            "primer_cognom": primer_cognom,
+            "segon_cognom": segon_cognom,
+            "edat": int(edat),
+            "genere": genere
+        }).execute()
+
+        new_id = result.data[0]["id"]
+
+        return redirect(f"/detail/{new_id}")
+
     return render_template("register.html")
 
 @app.route("/detail/<entry_id>")
 def detail(entry_id):
-    if entry_id not in database:
+
+    result = supabase.table("persons").select("*").eq("id", entry_id).single().execute()
+
+    if result.data is None:
         return "Not found", 404
-    return render_template("detail.html", data=database[entry_id], entry_id=entry_id)
+
+    return render_template("detail.html", data=result.data)
 
 @app.route("/search")
 def search():

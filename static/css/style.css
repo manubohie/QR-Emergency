@@ -22,8 +22,9 @@ body {
 /* Contenidor principal de totes les pàgines */
 .page-wrapper {
     width: 100%;
-    max-width: 600px; /* Centrat i amb amplada controlada */
+    max-width: 900px;   /* Amplada ideal per ordinador */
     margin: 0 auto;
+    padding: 20px;      /* Marges laterals uniformes */
 }
 
 
