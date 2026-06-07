@@ -14,28 +14,42 @@ def register():
     if request.method == "POST":
         entry_id = str(uuid.uuid4())[:8]
         database[entry_id] = {
-            "name": request.form["name"],
-            "vehicle": request.form["vehicle"],
-            "gender": request.form["gender"],
-            "emergency_phone": request.form["emergency_phone"],
-            "optional_phone": request.form["optional_phone"],
-            "occupation": request.form["occupation"],
-            "address": request.form["address"],
-            "blood": request.form["blood"],
-            "medical": request.form["medical"]
+            "nom": request.form["nom"],
+            "primer_cognom": request.form["primer_cognom"],
+            "segon_cognom": request.form["segon_cognom"],
+            "edat": request.form["edat"],
+            "tipus": request.form["tipus"]
         }
         return redirect(url_for("detail", entry_id=entry_id))
     return render_template("register.html")
-
-@app.route("/scan")
-def scan():
-    return render_template("scan.html")
 
 @app.route("/p/<entry_id>")
 def detail(entry_id):
     if entry_id not in database:
         return "Not found", 404
     return render_template("detail.html", data=database[entry_id], entry_id=entry_id)
+
+@app.route("/scan")
+def scan():
+    return render_template("scan.html")
+
+@app.route("/search")
+def search(people):
+    q = request.args.get("q", "").lower()
+
+    # Recuperar totes les persones
+    people = supabase.table("persons").select("*").execute().data
+
+    # Filtre simple
+    if q:
+        people = [
+            p for p in people
+            if q in p["nom"].lower()
+            or q in p["edat"].lower()
+            or q in p.get("edat", "").lower()
+        ]
+
+    return render_template("search.html", people=people)
 
 if __name__ == "__main__":
     app.run()

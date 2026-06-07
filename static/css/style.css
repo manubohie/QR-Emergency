@@ -45,7 +45,7 @@ body {
     font-size: 16px;
 }
 
-button {
+button, a {
     width: 100%;
     padding: 12px;
     background: #007bff;
@@ -120,4 +120,57 @@ textarea {
     width: 120px;
     display: block;
     margin: 20px auto;
+}
+
+/* Barra de cerca */
+.search-bar-modern {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-bar-modern input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: #f2f7ff;
+    font-size: 16px;
+}
+
+/* Graella de targetes */
+.grid-modern {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Targeta de persona */
+.card-person-modern {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    backdrop-filter: blur(8px);
+    text-align: center;
+}
+
+/* Foto */
+.photo-modern {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+/* Info */
+.info-person-modern h3 {
+    margin: 5px 0;
+    font-size: 20px;
+}
+
+.info-person-modern p {
+    margin: 3px 0;
+    font-size: 15px;
 }

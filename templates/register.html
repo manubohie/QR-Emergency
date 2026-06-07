@@ -15,17 +15,27 @@
 
         <div class="field-modern">
             <img src="/static/img/user.png" class="icon-field">
-            <input name="name" placeholder="Nom complet" required>
-        </div>
-
-        <div class="field-modern">
-            <img src="/static/img/car.png" class="icon-field">
-            <input name="vehicle" placeholder="Matrícula" required>
+            <input name="nom" placeholder="Nom" required>
         </div>
 
         <div class="field-modern">
             <img src="/static/img/user.png" class="icon-field">
-            <select name="gender">
+            <input name="primer_cognom" placeholder="Primer cognom" required>
+        </div>
+
+        <div class="field-modern">
+            <img src="/static/img/user.png" class="icon-field">
+            <input name="segon_cognom" placeholder="Segon cognom" required>
+        </div>
+
+        <div class="field-modern">
+            <img src="/static/img/car.png" class="icon-field">
+            <input name="edat" placeholder="Edat">
+        </div>
+
+        <div class="field-modern">
+            <img src="/static/img/user.png" class="icon-field">
+            <select name="tipus">
                 <option>Home</option>
                 <option>Dona</option>
             </select>
@@ -48,7 +58,10 @@
 
         <div class="field-modern">
             <img src="/static/img/blood.png" class="icon-field">
-            <input name="blood" placeholder="Grup sanguini">
+            <select name="grup_sanguini" placeholder="Grup sanguini">
+                <option>A+</option>
+                <option>A-</option>
+            </select>
         </div>
 
         <div class="field-modern">
@@ -56,10 +69,10 @@
             <textarea name="medical" placeholder="Condicions mèdiques"></textarea>
         </div>
 
-        <button type="submit" class="btn-modern primary-modern">Generar QR</button>
+        <button type="submit" class="btn-modern primary-modern">Registrar persona</button>
     </form>
 
-    <a href="/" class="btn-modern secondary-modern">Tornar</a>
+    <button class="btn-modern secondary-modern"><a href="/">Tornar</a></button>
 
 </div>
 
