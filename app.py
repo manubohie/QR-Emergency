@@ -34,7 +34,7 @@ def search():
     return render_template("search.html")
 
 @app.route("/search_person")
-def search_person():
+def search_person(cercador_persona):
     cercador_persona = request.args.get("cercador_persona", "").lower()
 
     # Filtre simple
