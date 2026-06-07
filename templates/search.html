@@ -11,7 +11,7 @@
 
     <h1 class="title">Cercar persona</h1>
 
-    <form method="GET" action="/search" class="search-bar-modern">
+    <form method="GET" action="/detail//{{ people.get('id') }}" class="search-bar-modern">
         <input type="text" 
                name="cerca_persona" 
                placeholder="nom, cognoms, edat, gènere..."
@@ -21,21 +21,22 @@
 
     <div class="grid-modern">
         {% for person in people %}
-        <div class="card-person-modern">
+        <a href="/detail/{{ person.get('id') }}">
 
-            <img src="/static/img/user.png" class="photo-modern">
+            <div class="card-person-modern">
 
-            <a href="/detail/{{ person.get('id') }}">
-                <div class="info-person-modern">
-                    <h3>{{ person.get('nom', '') }}</h3>
-                    <!--<p><b>Primer cognom:</b> {{ person.get('primer_cognom', '') }}</p>
-                    <p><b>Segon cognom:</b> {{ person.get('segon_cognom', '') }}</p>
-                    <p><b>Edat:</b> {{ person.get('edat', '') }}</p>
-                    <p><b>Gènere:</b> {{ person.get('genere', '') }}</p>-->
-                </div>
-            </a>
+                <img src="/static/img/user.png" class="photo-modern">
+                
+                    <div class="info-person-modern">
+                        <h3>{{ person.get('nom', '') }}</h3>
+                        <!--<p><b>Primer cognom:</b> {{ person.get('primer_cognom', '') }}</p>
+                        <p><b>Segon cognom:</b> {{ person.get('segon_cognom', '') }}</p>
+                        <p><b>Edat:</b> {{ person.get('edat', '') }}</p>
+                        <p><b>Gènere:</b> {{ person.get('genere', '') }}</p>-->
+                    </div>
 
-        </div>
+            </div>
+        </a>
         {% endfor %}
     </div>
 
