@@ -1,99 +1,56 @@
+/* ======= LAYOUT GLOBAL ======= */
+
 body {
     background: #d9ecff;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+
+    /* Centrat vertical i horitzontal */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    /* Scroll vertical si cal */
+    min-height: 100vh;
+    overflow-y: auto;
+
+    /* Marges laterals uniformes */
+    padding: 20px;
 }
 
-.container {
-    max-width: 420px;
-    margin: 40px auto;
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+/* Contenidor principal de totes les pàgines */
+.page-wrapper {
+    width: 100%;
+    max-width: 600px; /* Centrat i amb amplada controlada */
+    margin: 0 auto;
 }
+
+
+/* ======= TITOLS ======= */
 
 .title {
     text-align: center;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.field {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    background: #f2f7ff;
-    padding: 10px;
-    border-radius: 8px;
-}
 
-.field img {
-    width: 22px;
-    margin-right: 10px;
-}
+/* ======= CAMPS DE FORMULARI ======= */
 
-.field input,
-.field select,
-.field textarea {
-    width: 100%;
-    border: none;
-    background: transparent;
-    outline: none;
-    font-size: 16px;
-}
-
-button, a {
-    width: 100%;
-    padding: 12px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover, a:hover {
-    background: #005fcc;
-}
-
-.back {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.icon-btn {
-    width: 22px;
-    vertical-align: middle;
-    margin-right: 8px;
-}
-
-.logo-img {
-    width: 60px;
-    display: block;
-    margin: 0 auto 10px auto;
-}
-
-/* Camps moderns */
 .field-modern {
     display: flex;
     align-items: center;
     background: #f2f7ff;
-    padding: 12px;
+    padding: 14px;
     border-radius: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .icon-field {
-    width: 24px;
-    margin-right: 10px;
+    width: 26px;
+    margin-right: 12px;
 }
 
 .field-modern input,
@@ -102,7 +59,7 @@ button:hover, a:hover {
     width: 100%;
     border: none;
     background: transparent;
-    font-size: 16px;
+    font-size: 17px;
     outline: none;
 }
 
@@ -110,44 +67,63 @@ textarea {
     resize: vertical;
 }
 
-/* Info */
-.info-modern p {
-    font-size: 17px;
-    margin: 8px 0;
-}
 
-/* QR preview */
-.qr-preview {
-    width: 120px;
+/* ======= BOTONS ======= */
+
+button,
+a.btn-modern {
+    width: 100%;
+    padding: 14px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 12px;
+    text-align: center;
     display: block;
-    margin: 20px auto;
 }
 
-/* Barra de cerca */
+button:hover,
+a.btn-modern:hover {
+    background: #005fcc;
+}
+
+/* Separació clara entre botons */
+.button-group a,
+.button-group button {
+    margin-bottom: 12px;
+}
+
+
+/* ======= BARRA DE CERCA ======= */
+
 .search-bar-modern {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 25px;
 }
 
 .search-bar-modern input {
     flex: 1;
-    padding: 12px;
+    padding: 14px;
     border-radius: 12px;
     border: none;
     background: #f2f7ff;
-    font-size: 16px;
+    font-size: 17px;
 }
 
-/* Graella de targetes — MILLORADA */
+
+/* ======= TARGETES DE PERSONA ======= */
+
 .grid-modern {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    gap: 22px;
     margin-top: 20px;
 }
 
-/* Targeta de persona — MILLORADA */
 .card-person-modern {
     background: white;
     border-radius: 14px;
@@ -162,7 +138,6 @@ textarea {
     box-shadow: 0 6px 16px rgba(0,0,0,0.18);
 }
 
-/* Foto — MILLORADA */
 .photo-modern {
     width: 90px;
     height: 90px;
@@ -172,7 +147,6 @@ textarea {
     border: 3px solid #007bff;
 }
 
-/* Info — MILLORADA */
 .info-person-modern h3 {
     margin: 6px 0;
     font-size: 1.2rem;
@@ -183,12 +157,4 @@ textarea {
     margin: 2px 0;
     font-size: 0.9rem;
     color: #444;
-}
-
-/* Botó de fitxa */
-.btn-modern.secondary-modern {
-    margin-top: 12px;
-    display: inline-block;
-    padding: 8px 14px;
-    font-size: 0.9rem;
 }

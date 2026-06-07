@@ -5,41 +5,44 @@
     <title>Cercar persona</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
-<body class="animated-bg">
 
-<div class="card-home-modern">
+<body>
+<div class="page-wrapper">
 
-    <h1 class="title-modern">Cercar persona</h1>
+    <h1 class="title">Cercar persona</h1>
 
     <form method="GET" action="/search" class="search-bar-modern">
         <input type="text" 
-               name="carca_persona" 
-               placeholder="nom, cognoms, edat, gènere..." 
-               value="{{ cerca_persona | default('') }}">
-        <button class="btn-modern primary-modern">Buscar</button>
+               name="cerca_persona" 
+               placeholder="nom, cognoms, edat, gènere..."
+               value="{{ cerca_persona }}">
+        <button class="btn-modern">Buscar</button>
     </form>
 
     <div class="grid-modern">
         {% for person in people %}
         <div class="card-person-modern">
-            <img src="{{ person.get('photo_url', '') }}" class="photo-modern">
+
+            <img src="/static/img/user.png" class="photo-modern">
 
             <div class="info-person-modern">
                 <h3>{{ person.get('nom', '') }}</h3>
+                <p><b>Primer cognom:</b> {{ person.get('primer_cognom', '') }}</p>
+                <p><b>Segon cognom:</b> {{ person.get('segon_cognom', '') }}</p>
+                <p><b>Edat:</b> {{ person.get('edat', '') }}</p>
+                <p><b>Gènere:</b> {{ person.get('genere', '') }}</p>
             </div>
 
-            <a href="/detail/{{ person.get('id') }}" class="btn-modern secondary-modern">
-                Veure fitxa
-            </a>
+            <a href="/p/{{ person.get('id') }}" class="btn-modern">Veure fitxa</a>
+
         </div>
         {% endfor %}
     </div>
 
     <div class="button-group">
-        <a href="/" class="btn-modern secondary-modern">Tornar</a>
+        <a href="/" class="btn-modern">Tornar</a>
     </div>
 
 </div>
-
 </body>
 </html>

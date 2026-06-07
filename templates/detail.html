@@ -2,21 +2,23 @@
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
-    <title>Informació</title>
+    <title>Detall persona</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
-<body class="animated-bg">
 
-<div class="card-home-modern">
+<body>
+<div class="page-wrapper">
 
-    <h1 class="title-modern">Informació</h1>
+    <h1 class="title">Fitxa de {{ data.nom }}</h1>
+
+    <img src="/static/img/user.png" class="photo-modern">
 
     <div class="info-modern">
         <p><b>Nom:</b> {{ data.nom }}</p>
         <p><b>Primer cognom:</b> {{ data.primer_cognom }}</p>
         <p><b>Segon cognom:</b> {{ data.segon_cognom }}</p>
         <p><b>Edat:</b> {{ data.edat }}</p>
-        <p><b>Gènere:</b> {{ data.genere }}</p>        
+        <p><b>Gènere:</b> {{ data.genere }}</p>
         <!--<p><b>Telèfon emergència:</b> {{ data.telefon_emergencia }}</p>
         <p><b>Telèfon opcional:</b> {{ data.telefon_opcional }}</p>
         <p><b>Adreça:</b> {{ data.adreça }}</p>
@@ -25,10 +27,10 @@
     </div>
 
     <div class="button-group">
-        <a href="/" class="btn-modern secondary-modern">Tornar</a>
+        <a href="/search" class="btn-modern">Tornar a la cerca</a>
+        <a href="/" class="btn-modern">Inici</a>
     </div>
 
 </div>
-
 </body>
 </html>

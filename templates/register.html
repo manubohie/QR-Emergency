@@ -5,79 +5,52 @@
     <title>Registrar persona</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
-<body class="animated-bg">
 
-<div class="card-home-modern">
+<body>
+<div class="page-wrapper">
 
-    <h1 class="title-modern">Registrar persona</h1>
+    <h1 class="title">Registrar persona</h1>
 
-    <form method="POST" class="form-modern">
+    <form method="POST">
 
         <div class="field-modern">
             <img src="/static/img/user.png" class="icon-field">
-            <input name="nom" placeholder="Nom" required>
+            <input type="text" name="nom" placeholder="Nom" required>
         </div>
 
         <div class="field-modern">
             <img src="/static/img/user.png" class="icon-field">
-            <input name="primer_cognom" placeholder="Primer cognom" required>
+            <input type="text" name="primer_cognom" placeholder="Primer cognom" required>
         </div>
 
         <div class="field-modern">
             <img src="/static/img/user.png" class="icon-field">
-            <input name="segon_cognom" placeholder="Segon cognom" required>
+            <input type="text" name="segon_cognom" placeholder="Segon cognom">
         </div>
 
         <div class="field-modern">
-            <img src="/static/img/car.png" class="icon-field">
-            <input name="edat" placeholder="Edat">
+            <img src="/static/img/user.png" class="icon-field">
+            <input type="number" name="edat" placeholder="Edat" required>
         </div>
 
         <div class="field-modern">
             <img src="/static/img/user.png" class="icon-field">
             <select name="genere">
-                <option>Home</option>
-                <option>Dona</option>
+                <option value="">Selecciona gènere</option>
+                <option value="home">Home</option>
+                <option value="dona">Dona</option>
+                <option value="altre">Altres</option>
             </select>
         </div>
 
-        <div class="field-modern">
-            <img src="/static/img/phone.png" class="icon-field">
-            <input name="telefon_emergencia" placeholder="Telèfon d'emergència" required>
-        </div>
-
-        <div class="field-modern">
-            <img src="/static/img/phone.png" class="icon-field">
-            <input name="telefon_opcional" placeholder="Telèfon opcional">
-        </div>
-
-        <div class="field-modern">
-            <img src="/static/img/address.png" class="icon-field">
-            <textarea name="adreça" placeholder="Adreça" required></textarea>
-        </div>
-
-        <div class="field-modern">
-            <img src="/static/img/blood.png" class="icon-field">
-            <select name="grup_sanguini" placeholder="Grup sanguini">
-                <option>A+</option>
-                <option>A-</option>
-            </select>
-        </div>
-
-        <div class="field-modern">
-            <img src="/static/img/medical.png" class="icon-field">
-            <textarea name="condicions" placeholder="Condicions mèdiques"></textarea>
-        </div>
+        <button type="submit">Guardar</button>
 
         <div class="button-group">
-
-            <button type="submit" class="btn-modern primary-modern">Registrar persona</button>
-            <button class="btn-modern secondary-modern"><a href="/">Tornar</a></button>
-            
+            <a href="/" class="btn-modern">Tornar</a>
         </div>
+
     </form>
 
 </div>
-
 </body>
 </html>
