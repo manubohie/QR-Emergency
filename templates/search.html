@@ -13,26 +13,26 @@
 
     <form method="GET" action="/search" class="search-bar-modern">
         <input type="text" 
-               name="cerca_persona" 
-               placeholder="nom, primer cognom, segon cognom, edat, gènere..." 
-               value="{{ cerca_persona }}">
+               name="q" 
+               placeholder="nom, cognoms, edat, gènere..." 
+               value="{{ q }}">
         <button class="btn-modern primary-modern">Buscar</button>
     </form>
 
     <div class="grid-modern">
         {% for person in people %}
         <div class="card-person-modern">
-            <img src="{{ person.photo_url }}" class="photo-modern">
+            <img src="{{ person.get('photo_url', '') }}" class="photo-modern">
 
             <div class="info-person-modern">
-                <h3>{{ person.nom }}</h3>
-                <p><b>Primer cognom:</b> {{ person.primer_cognom }}</p>
-                <p><b>Segon cognom:</b> {{ person.segon_cognom }}</p>
-                <p><b>Edat:</b> {{ person.edat }}</p>
-                <p><b>Gènere:</b> {{ person.genere }}</p>
+                <h3>{{ person.get('nom', '') }}</h3>
+                <p><b>Primer cognom:</b> {{ person.get('primer_cognom', '') }}</p>
+                <p><b>Segon cognom:</b> {{ person.get('segon_cognom', '') }}</p>
+                <p><b>Edat:</b> {{ person.get('edat', '') }}</p>
+                <p><b>Gènere:</b> {{ person.get('genere', '') }}</p>
             </div>
 
-            <a href="/detail/{{ person.id }}" class="btn-modern secondary-modern">
+            <a href="/detail/{{ person.get('id') }}" class="btn-modern secondary-modern">
                 Veure fitxa
             </a>
         </div>

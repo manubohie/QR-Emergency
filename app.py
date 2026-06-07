@@ -47,7 +47,7 @@ def search():
             or cerca_persona in p.get("genere", "").lower()
         ]
 
-    return render_template("search.html", people=people)
+    return render_template("search.html", people=people, cerca_persona=cerca_persona)
 
 
 if __name__ == "__main__":
