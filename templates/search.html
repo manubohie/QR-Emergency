@@ -21,6 +21,8 @@
 
     <div class="grid-modern">
         {% for person in people %}
+        <a href="/detail/{{ person.get('id') }}">
+
             <div class="card-person-modern">
 
                 <img src="/static/img/user.png" class="photo-modern">
@@ -34,6 +36,7 @@
                     </div>
 
             </div>
+        </a>
         {% endfor %}
     </div>
 
