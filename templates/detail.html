@@ -30,18 +30,20 @@
         {% if familiars %}
         <h3>Familiars</h3>
             {% for f in familiars %}
-                <div class="info-modern">
-                    <p><b>Nom:</b> {{ data.nom }}</p>
-                    <p><b>Primer cognom:</b> {{ data.primer_cognom }}</p>
-                    <p><b>Segon cognom:</b> {{ data.segon_cognom }}</p>
-                    <p><b>Edat:</b> {{ data.edat }}</p>
-                    <p><b>Gènere:</b> {{ data.genere }}</p>
-                    <!--<p><b>Telèfon emergència:</b> {{ data.telefon_emergencia }}</p>
-                    <p><b>Telèfon opcional:</b> {{ data.telefon_opcional }}</p>
-                    <p><b>Adreça:</b> {{ data.adreça }}</p>
-                    <p><b>Grup sanguini:</b> {{ data.grup_sanguini }}</p>
-                    b>Condicions mèdiques:</b> {{ data.condicions_mediques }}</p>-->
-                </div>
+                <a href="/detail/{{ f.get('id') }}"></a>
+                    <div class=""info-person-modern">
+                        <p><b>Nom:</b> {{ <fieldset></fieldset>.nom }}</p>
+                        <p><b>Primer cognom:</b> {{ f.primer_cognom }}</p>
+                        <p><b>Segon cognom:</b> {{ f.segon_cognom }}</p>
+                        <p><b>Edat:</b> {{ f.edat }}</p>
+                        <p><b>Gènere:</b> {{ f.genere }}</p>
+                        <!--<p><b>Telèfon emergència:</b> {{ f.telefon_emergencia }}</p>
+                        <p><b>Telèfon opcional:</b> {{ f.telefon_opcional }}</p>
+                        <p><b>Adreça:</b> {{ f.adreça }}</p>
+                        <p><b>Grup sanguini:</b> {{ f.grup_sanguini }}</p>
+                        b>Condicions mèdiques:</b> {{ f.condicions_mediques }}</p>-->
+                    </div>
+                </a>
             {% endfor %}
         {% endif %}
     </div>
