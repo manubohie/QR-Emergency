@@ -22,7 +22,7 @@ def home():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     # Obtenir totes les persones existents per omplir el selector
-    people = supabase.table("persons").select("id, nom, primer_cognom").execute().data
+    people = supabase.table("persons").select("id").execute().data
 
     if request.method == "POST":
 
