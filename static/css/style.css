@@ -97,6 +97,10 @@ a.btn-modern:hover {
     margin-bottom: 12px;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 /* ======= BARRA DE CERCA ======= */
 
