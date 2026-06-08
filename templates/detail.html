@@ -32,7 +32,7 @@
             {% for f in familiars %}
                 <a href="/detail/{{ f.get('id') }}"></a>
                     <div class=""info-person-modern">
-                        <p><b>Nom:</b> {{ <fieldset></fieldset>.nom }}</p>
+                        <p><b>Nom:</b> {{ f.nom }}</p>
                         <p><b>Primer cognom:</b> {{ f.primer_cognom }}</p>
                         <p><b>Segon cognom:</b> {{ f.segon_cognom }}</p>
                         <p><b>Edat:</b> {{ f.edat }}</p>
